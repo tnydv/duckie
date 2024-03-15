@@ -1,5 +1,5 @@
 import { Animated, StyleSheet, TouchableWithoutFeedback } from "react-native";
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useState } from "react";
 
 import DuckImage from "../../assets/duck.png";
 
@@ -18,23 +18,23 @@ const DuckAvatar = ({
     if (isRecording) {
       Animated.loop(
         Animated.timing(shakeAnimation, {
-          toValue: -2,
-          duration: 850,
+          toValue: 1.5,
+          duration: 800,
           useNativeDriver: true,
         })
       ).start();
     } else {
-      shakeAnimation.stopAnimation();
+      shakeAnimation.stopAnimation(0);
       shakeAnimation.setValue(0);
     }
-  }, [isRecording]);
+  }, [isRecording, shakeAnimation]);
 
   const animatedStyle = {
     transform: [
       {
         rotate: shakeAnimation.interpolate({
-          inputRange: [-2, 0, 2],
-          outputRange: ["-2deg", "0deg", "2deg"],
+          inputRange: [0, 1],
+          outputRange: ["0deg", "-2deg"],
         }),
       },
     ],
@@ -43,7 +43,7 @@ const DuckAvatar = ({
   return (
     <TouchableWithoutFeedback
       onPress={() => {
-        onPress?.(); 
+        onPress?.();
       }}>
       <Animated.Image
         source={source}

@@ -1,21 +1,10 @@
 import { Image, StyleSheet, Text, View } from "react-native";
 import React from "react";
 
-import DuckImage from "../../assets/duck.png";
-
-const ProfileScreen = () => {
+const RecordingsScreen = () => {
   return (
     <View style={styles.container}>
-      <Image
-        contentFit="contain"
-        style={styles.image}
-        source={DuckImage}
-        alt="8-bit duck"
-      />
-      <Text>@tnydv | username</Text>
-      <Text>member since</Text>
-      <Text>03-09-2024</Text>
-      <Text style={styles.logout}>Logout</Text>
+      <Text>RecordingsScreen</Text>
     </View>
   );
 };
@@ -42,4 +31,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default ProfileScreen;
+export default RecordingsScreen;

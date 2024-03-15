@@ -6,6 +6,7 @@ import MaterialCommunityIcons from "react-native-vector-icons/MaterialCommunityI
 
 import HomeScreen from "./src/screens/HomeScreen";
 import ProfileScreen from "./src/screens/ProfileScreen";
+import RecordingsScreen from "./src/screens/RecordigsScreen";
 
 const Tab = createBottomTabNavigator();
 
@@ -14,17 +15,8 @@ export default function App() {
     <NavigationContainer>
       <Tab.Navigator
         screenOptions={({ route }) => ({
-          headerShown: route.name !== "Home",
+          headerShown: route.name !== "Duck",
         })}>
-        <Tab.Screen
-          name="Home"
-          component={HomeScreen}
-          options={{
-            tabBarIcon: ({ color, size }) => (
-              <MaterialCommunityIcons name="duck" color={color} size={size} />
-            ),
-          }}
-        />
         <Tab.Screen
           name="Profile"
           component={ProfileScreen}
@@ -35,6 +27,24 @@ export default function App() {
                 color={color}
                 size={size}
               />
+            ),
+          }}
+        />
+        <Tab.Screen
+          name="Duck"
+          component={HomeScreen}
+          options={{
+            tabBarIcon: ({ color, size }) => (
+              <MaterialCommunityIcons name="duck" color={color} size={size} />
+            ),
+          }}
+        />
+        <Tab.Screen
+          name="My Quacks"
+          component={RecordingsScreen}
+          options={{
+            tabBarIcon: ({ color, size }) => (
+              <MaterialCommunityIcons name="playlist-play" color={color} size={size} />
             ),
           }}
         />

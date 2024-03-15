@@ -1,5 +1,5 @@
-import { Animated, StyleSheet, TouchableWithoutFeedback } from "react-native";
 import React, { useEffect, useState } from "react";
+import { Animated, TouchableWithoutFeedback } from "react-native";
 
 import DuckImage from "../../assets/duck.png";
 

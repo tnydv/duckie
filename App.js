@@ -14,6 +14,7 @@ export default function App() {
   return (
     <NavigationContainer>
       <Tab.Navigator
+        initialRouteName="Duck"
         screenOptions={({ route }) => ({
           headerShown: route.name !== "Duck",
         })}>
@@ -44,7 +45,11 @@ export default function App() {
           component={RecordingsScreen}
           options={{
             tabBarIcon: ({ color, size }) => (
-              <MaterialCommunityIcons name="playlist-play" color={color} size={size} />
+              <MaterialCommunityIcons
+                name="playlist-play"
+                color={color}
+                size={size}
+              />
             ),
           }}
         />

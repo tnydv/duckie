@@ -5,14 +5,14 @@ import MaterialCommunityIcons from "react-native-vector-icons/MaterialCommunityI
 
 const Item = ({ iconName, title, description, likes }) => {
   const [isPlaying, setIsPlaying] = useState(false);
-  const [isLiked, setIsLiked] = useState(false); // Track like state
+  const [isLiked, setIsLiked] = useState(false);
 
   const handlePlayButton = () => {
     setIsPlaying(!isPlaying);
   };
 
   const handleLikePress = () => {
-    setIsLiked(!isLiked); // Toggle like state on press
+    setIsLiked(!isLiked);
   };
 
   return (
@@ -28,7 +28,7 @@ const Item = ({ iconName, title, description, likes }) => {
         </TouchableOpacity>
         <View style={styles.contentSection}>
           <Text style={styles.title}>{title}</Text>
-          <Text>{description}</Text>
+          <Text style={styles.description}>{description}</Text>
         </View>
         <TouchableOpacity
           style={styles.likeContainer}
@@ -44,6 +44,7 @@ const Item = ({ iconName, title, description, likes }) => {
   );
 };
 
+//todo:  make heart container fixed.
 const styles = StyleSheet.create({
   container: {
     flex: 1,
@@ -51,43 +52,36 @@ const styles = StyleSheet.create({
     padding: 10,
     backgroundColor: "#fff",
     borderRadius: 15,
-    borderColor: "#ddd", // Light gray border (optional)
-    borderWidth: 1, // Border width (optional)
+    borderColor: "#ddd",
+    borderWidth: 1,
     margin: 5,
     marginBottom: 0,
   },
   topRow: {
     flexDirection: "row",
-    alignItems: "center", // Align content vertically
+    alignItems: "center",
   },
   playButtonContainer: {
-    justifyContent: "center", // Center play button vertically
-    marginRight: 10, // Add margin for spacing after button
+    justifyContent: "center",
+    marginRight: 10,
   },
   contentSection: {
-    flex: 1, // Allow title and description to expand and fill available space
+    flex: 1,
   },
   title: {
     fontSize: 18,
     fontWeight: "bold",
   },
   description: {
-    marginTop: 5, // Add margin for spacing after title
+    marginTop: 5,
   },
   likeContainer: {
     flexDirection: "row",
-    alignItems: "center", // Align heart and likes text vertically
+    alignItems: "center",
   },
   likes: {
-    marginLeft: 5, // Add margin for spacing after heart icon
-    fontSize: 14, // Make likes text smaller
-  },
-  // New style for invisible border
-  contentAndLikes: {
-    flexDirection: "row", // Arrange content and likes section side-by-side
-    flex: 1, // Make this section flexible to fill remaining space
-    borderBottomWidth: 1, // Add invisible border to the bottom
-    borderBottomColor: "transparent", // Make the border invisible
+    marginLeft: 5,
+    fontSize: 14,
   },
 });
 

@@ -1,0 +1,102 @@
+[
+  {
+    "id": 1,
+    "title": "Variables & Data Types",
+    "description": "A quick explanation of how variables store data in programs.",
+    "length": 30,
+    "likes": 123,
+    "isPlaying": false,
+    "tags": [],
+    "level": []
+  },
+  {
+    "id": 2,
+    "title": "Control Flow (If Statements)",
+    "description": "Learn how programs make decisions with if statements.",
+    "length": 45,
+    "likes": 87,
+    "isPlaying": false,
+    "tags": [],
+    "level": []
+  },
+  {
+    "id": 3,
+    "title": "Loops (For Loops)",
+    "description": "Understand how to repeat tasks efficiently with loops.",
+    "length": 60,
+    "likes": 192,
+    "isPlaying": false,
+    "tags": [],
+    "level": []
+  },
+  {
+    "id": 4,
+    "title": "Functions",
+    "description": "Break down complex tasks into reusable functions.",
+    "length": 50,
+    "likes": 241,
+    "isPlaying": false,
+    "tags": [],
+    "level": []
+  },
+  {
+    "id": 5,
+    "title": "Arrays & Lists",
+    "description": "Organize data collections effectively with arrays and lists.",
+    "length": 140,
+    "likes": 168,
+    "isPlaying": false,
+    "tags": [],
+    "level": []
+  },
+  {
+    "id": 6,
+    "title": "Objects & Data Structures",
+    "description": "Explore more complex data organization with objects and structures.",
+    "length": 75,
+    "likes": 112,
+    "isPlaying": false,
+    "tags": [],
+    "level": []
+  },
+  {
+    "id": 7,
+    "title": "Functions (Advanced)",
+    "description": "Master advanced function concepts like closures and recursion.",
+    "length": 90,
+    "likes": 278,
+    "isPlaying": false,
+    "tags": [],
+    "level": []
+  },
+  {
+    "id": 8,
+    "title": "Error Handling & Debugging",
+    "description": "Learn how to identify and fix errors in your code.",
+    "length": 85,
+    "likes": 154,
+    "isPlaying": false,
+    "tags": [],
+    "level": []
+  },
+  {
+    "id": 9,
+    "title": "Asynchronous Programming",
+    "description": "Handle tasks that take time to complete without blocking the program.",
+    "length": 100,
+    "likes": 219,
+    "isPlaying": false,
+    "tags": [],
+    "level": []
+  },
+  {
+    "id": 10,
+    "title": "Advanced Concepts & Libraries",
+    "description": "Dive deeper into powerful libraries and programming paradigms.",
+    "length": 120,
+    "likes": 305,
+    "isPlaying": false,
+    "tags": [],
+    "level": []
+  }
+]

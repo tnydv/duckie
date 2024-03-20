@@ -22,9 +22,7 @@ const HomeScreen = () => {
         alt="8-bit duck"
       />
       <Text style={styles.info}>
-        Tap to
-        {isRecording ? " stop " : " start "}
-        recording
+        Tap to {isRecording ? "stop" : "start"} recording
       </Text>
     </View>
   );

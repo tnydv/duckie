@@ -3,36 +3,42 @@ import { Animated, TouchableWithoutFeedback } from "react-native";
 
 import DuckImage from "../../assets/duck.png";
 
-const DEFAULT_IMAGE = DuckImage;
-
 const DuckAvatar = ({
-  source = DEFAULT_IMAGE,
+  source = DuckImage,
   isRecording,
   onPress,
   style,
   alt,
 }) => {
-  const [shakeAnimation] = useState(new Animated.Value(0));
+  const imageSource = source ?? DuckImage;
 
-  useEffect(() => {
+  const [recordingShake] = useState(new Animated.Value(0));
+
+  const handleAnimation = () => {
     if (isRecording) {
       Animated.loop(
-        Animated.timing(shakeAnimation, {
+        Animated.timing(recordingShake, {
           toValue: 1.5,
           duration: 800,
           useNativeDriver: true,
         })
       ).start();
     } else {
-      shakeAnimation.stopAnimation(0);
-      shakeAnimation.setValue(0);
+      recordingShake.stopAnimation(0);
+      recordingShake.setValue(0);
     }
-  }, [isRecording, shakeAnimation]);
+  };
+
+  useEffect(() => {
+    handleAnimation();
+
+    return () => recordingShake.stopAnimation();
+  }, [isRecording, recordingShake]);
 
   const animatedStyle = {
     transform: [
       {
-        rotate: shakeAnimation.interpolate({
+        rotate: recordingShake.interpolate({
           inputRange: [0, 1],
           outputRange: ["0deg", "-2deg"],
         }),
@@ -41,12 +47,9 @@ const DuckAvatar = ({
   };
 
   return (
-    <TouchableWithoutFeedback
-      onPress={() => {
-        onPress?.();
-      }}>
+    <TouchableWithoutFeedback onPress={onPress}>
       <Animated.Image
-        source={source}
+        source={imageSource}
         style={[style, animatedStyle]}
         resizeMode="contain"
         alt={alt}

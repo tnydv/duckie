@@ -11,8 +11,8 @@ const Item = ({ iconName, title, description, likes }) => {
   const [currentLikes, setCurrentLikes] = useState(likes);
 
   const handleVibrate = async () => {
-      try {
-        //todo: fix if statement, its backwards. but works correctly
+    try {
+      //todo: fix if statement, its backwards. but works correctly
       if (isLiked) {
         await Haptics.selectionAsync();
       } else {
@@ -29,13 +29,13 @@ const Item = ({ iconName, title, description, likes }) => {
     setIsPlaying(!isPlaying);
   };
 
-  const handleLikePress = async () => {
+  const handleLikePress = () => {
     setIsLiked(!isLiked);
     setCurrentLikes((previousState) =>
       isLiked ? previousState - 1 : previousState + 1
     );
 
-    await handleVibrate();
+    handleVibrate();
   };
 
   let iconColor = isLiked ? "#F00" : "#444";
